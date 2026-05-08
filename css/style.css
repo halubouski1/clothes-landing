@@ -107,7 +107,6 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: 820px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -233,7 +232,28 @@ body {
 }
 
 .hero__top-divider {
-  max-width: 90%;
+  position: relative;
+  width: 90%;
+  height: 12px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.hero__top-divider::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  clip-path: polygon(0% 91.67%, 100% 50%, 100% 58.33%, 0% 100%);
+}
+
+.hero__top-divider-rect {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 63px;
+  height: 6px;
+  background: white;
 }
 
 .hero__title {
@@ -933,14 +953,16 @@ body {
   opacity: 0.25;
 }
 
-.catalog-pagination {
+.catalog-pagination,
+.catalog-pagination-mobile {
   display: flex;
   gap: 8px;
   align-items: center;
   justify-content: center;
 }
 
-.catalog-pagination .swiper-pagination-bullet {
+.catalog-pagination .swiper-pagination-bullet,
+.catalog-pagination-mobile .swiper-pagination-bullet {
   width: 6px;
   height: 6px;
   background: rgba(177, 154, 137, 0.5);
@@ -949,7 +971,8 @@ body {
   margin: 0;
 }
 
-.catalog-pagination .swiper-pagination-bullet-active {
+.catalog-pagination .swiper-pagination-bullet-active,
+.catalog-pagination-mobile .swiper-pagination-bullet-active {
   background: #b19a89;
 }
 
@@ -1046,4 +1069,154 @@ body {
 
 .footer__col-links a:hover {
   color: rgba(255, 255, 255, 0.85);
+}
+
+/* ─── Burger ─────────────────────────────────────────────── */
+
+.burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(217, 217, 217, 0.3);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.burger svg {
+  width: 20px;
+  height: 15px;
+}
+
+/* ─── Offcanvas ──────────────────────────────────────────── */
+
+.offcanvas-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.offcanvas-overlay--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.offcanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  background: #0e0a06;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 30px;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.offcanvas--open {
+  transform: translateX(0);
+}
+
+.offcanvas__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 0;
+}
+
+.offcanvas__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.offcanvas__nav-list li a {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.offcanvas__nav-list li a:hover {
+  opacity: 0.7;
+}
+
+/* ─── Catalog mobile ─────────────────────────────────────── */
+
+.catalog-mobile {
+  display: none;
+  padding: 0 0 60px;
+  background: #000;
+  background-image: url(/assets/img/catalog-info-bg.png);
+  background-size: cover;
+  background-position: center center;
+}
+
+.catalog-mobile .catalog__title {
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+.catalog-mobile .catalog__desc {
+  margin-bottom: 24px;
+}
+
+.catalog-swiper-mobile {
+  width: 100%;
+  overflow: hidden;
+}
+
+.catalog-swiper-mobile .swiper-slide {
+  height: 460px;
+}
+
+.catalog-swiper-mobile .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.catalog-mobile__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 22px 0;
+}
+
+.catalog-prev-mobile,
+.catalog-next-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  position: relative;
+  z-index: 1;
 }
