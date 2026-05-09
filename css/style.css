@@ -1159,7 +1159,7 @@ body {
 .offcanvas__nav-list li a {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 20px;
+  font-size: 13px;
   color: var(--color-white);
   text-decoration: none;
   transition: opacity 0.2s;
