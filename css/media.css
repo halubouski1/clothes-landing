@@ -355,6 +355,18 @@
         padding: 0 15px;
     }
 
+    .hero__top {
+        padding-top: 30px;
+    }
+
+    .hero__top-divider {
+        width: 58%;
+    }
+
+    .hero__bottom {
+        padding-bottom: 40px;
+    }
+
     .hero__title {
         font-size: 45px;
     } 
@@ -379,10 +391,44 @@
         padding-right: 15px;
         padding-left: 15px;
         padding-bottom: 70px;
+        gap: 0;
+    }
+
+    .about__label {
+        margin-bottom: 22px;
+    }
+
+    .about__title {
+        max-width: 222px;
+        margin-bottom: 30px;
+    }
+
+    .about__text {
+        margin-bottom: 50px;
+    }
+
+    .about__img {
+        margin-bottom: 50px;
     }
 
     .collection {
         padding-top: 0;
+    }
+
+    .collection__title {
+        max-width: 222px;
+    }
+
+    .collection__header {
+        margin-bottom: 30px;
+    }
+
+    .collection__card-tag {
+        font-size: 10px;
+    }
+
+    .collection__grid {
+        gap: 40px;
     }
 
     .looks__cards-left, .looks__cards-right {
@@ -393,6 +439,14 @@
     .looks__cards-mobile-section {
     min-height: 1070px;
     position: relative;
+    }
+
+    .looks__title {
+        max-width: 251px;
+    }
+
+    .looks {
+        align-items: center;
     }
 
     .looks__inner {
@@ -459,6 +513,10 @@
     .power__left-content {
         bottom: 30px;
         left: 15px;
+    }
+
+    .power__btn {
+        margin-bottom: 147px;
     }
 
     .catalog-mobile {
