@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 <body>
 
@@ -151,7 +152,7 @@
   <!-- ═══════════════════════════════════════════════════════
        ABOUT
   ══════════════════════════════════════════════════════════ -->
-  <section class="about" id="about">
+  <section class="about" id="about" data-aos="fade-up">
 
     <div class="about__left">
       <span class="about__label">Our essence</span>
@@ -172,7 +173,7 @@
   <!-- ═══════════════════════════════════════════════════════
        COLLECTION
   ══════════════════════════════════════════════════════════ -->
-  <section class="collection">
+  <section class="collection" data-aos="fade-up">
     <div class="container">
 
       <div class="collection__header">
@@ -255,7 +256,7 @@
   <!-- ═══════════════════════════════════════════════════════
        LOOKS
   ══════════════════════════════════════════════════════════ -->
-  <section class="looks">
+  <section class="looks" data-aos="fade-up">
 
     <div class="looks__bg">
       <img src="assets/img/choose.jpg" alt="Choose the Woman You Want to Be Today">
@@ -321,7 +322,7 @@
       </div>
     </div>
   </section>
-  <section class="looks__cards-mobile-section">
+  <section class="looks__cards-mobile-section" data-aos="fade-up">
     <div class="container looks__inner">
       <div class="looks__cards looks__cards--mobile">
         <div class="looks__cards-left">
@@ -385,7 +386,7 @@
   <!-- ═══════════════════════════════════════════════════════
        POWER
   ══════════════════════════════════════════════════════════ -->
-  <section class="power">
+  <section class="power" data-aos="fade-up">
 
     <!-- Left: image with bottom text -->
     <div class="power__left">
@@ -476,7 +477,7 @@
   <!-- ═══════════════════════════════════════════════════════
        CATALOG SLIDER
   ══════════════════════════════════════════════════════════ -->
-  <section class="catalog">
+  <section class="catalog" data-aos="fade-up">
 
     <!-- Top divider -->
      <div class="container">
@@ -554,7 +555,7 @@
   <!-- ═══════════════════════════════════════════════════════
        CATALOG SLIDER — MOBILE (hidden on desktop)
   ══════════════════════════════════════════════════════════ -->
-  <section class="catalog-mobile">
+  <section class="catalog-mobile" data-aos="fade-up">
 
     <div class="container">
       <div class="catalog__top-divider catalog-mobile__top-divider"></div>
@@ -783,6 +784,16 @@
       overlay.addEventListener('click', closeMenu);
       closeBtn.addEventListener('click', closeMenu);
     })();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      offset: 80,
+      once: true,
+      easing: 'ease-out',
+    });
   </script>
 
 </body>
