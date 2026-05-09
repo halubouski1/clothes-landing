@@ -722,6 +722,10 @@ body {
   min-height: 100vh;
 }
 
+.power__svg-mobile {
+  display: none;
+}
+
 .power__left {
   width: 50%;
   flex-shrink: 0;
