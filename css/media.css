@@ -627,4 +627,8 @@
     .collection__card-img {
     aspect-ratio: inherit;
     } */
+
+    .collection__card-img img {
+    object-fit: inherit;
+}
 }
