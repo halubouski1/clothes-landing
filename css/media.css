@@ -113,7 +113,7 @@
     }
 
     .looks__card-desc {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .looks__title {
@@ -648,5 +648,17 @@
 
     .collection__card-img img {
     object-fit: inherit;
+}
+
+.looks__card--first p {
+    max-width: 262px;
+}
+
+.looks__card--third p {
+    max-width: 267px;
+}
+
+.looks__card--fourth p {
+    max-width: 234px;
 }
 }
