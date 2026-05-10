@@ -103,13 +103,8 @@
 
     /* looks */
     .looks__card {
-        padding: 15px;
         width: 50%;
         min-height: 400px;
-    }
-
-    .looks__card-name {
-        font-size: 20px;
     }
 
     .looks__card-desc {
@@ -123,6 +118,10 @@
 
     .looks__inner {
         padding-bottom: 100px;
+    }
+
+    .looks__cards-left, .looks__cards-right {
+        gap: 10px;
     }
 
     .looks__cards {
@@ -484,14 +483,28 @@
 
     .about__img {
         margin-bottom: 50px;
+        max-width: 209px;
     }
 
     .collection {
         padding-top: 0;
+        padding-bottom: 30px;
     }
 
     .collection__title {
         max-width: 222px;
+    }
+
+    .collection__label {
+        font-size: 10px;
+    }
+
+    .collection__card-num {
+        font-size: 16px;
+    }
+
+    .collection__card-name {
+        font-size: 25px;
     }
 
     .collection__header {
@@ -634,6 +647,7 @@
 
     .footer__inner--mobile {
         display: flex;
+        padding-top: 20px;
     }
 
     .footer__logo img {
@@ -667,6 +681,10 @@
 
 .looks__card--first p {
     max-width: 262px;
+}
+
+.looks__cards {
+    gap: 10px;
 }
 
 .looks__card--third p {
