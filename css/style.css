@@ -133,12 +133,12 @@ body {
   pointer-events: none;
   width: 2127px;
   height: 488px;
-  top: 50%;
-  left: 79%;
-  transform: translate(-50%, -50%) rotate(118deg);
+  top: 300px;
+  left: 80%;
+  transform: translateX(-50%) rotate(118deg);
   background: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(1px) brightness(1.04);
-  -webkit-backdrop-filter: blur(32px) brightness(1.04);
+  backdrop-filter: blur(10px) brightness(1.04);
+  -webkit-backdrop-filter: blur(10px) brightness(1.04);
   border-top: 1px solid rgba(255, 255, 255, 0.10);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   box-shadow:
@@ -226,7 +226,7 @@ body {
   display: flex;
   /* gap: 450px;
   align-items: flex-end; */ 
-    width: 95%;
+    width: 98%;
     justify-content: space-between;
     align-items: flex-end;
 }
@@ -392,6 +392,7 @@ body {
   display: flex;
   min-height: 100vh;
   padding: 100px 0;
+  padding-bottom: 0;
   background: #000;
 }
 
@@ -446,7 +447,11 @@ body {
   line-height: 144%;
   text-align: center;
   color: #b19a89;
-  max-width: 620px;
+  max-width: 629px;
+}
+
+.about__text--bottom {
+  max-width: 669px;
 }
 
 .about__img img {
@@ -867,7 +872,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 48px 40px 40px var(--container-padding);
+  padding: 48px 34px 40px var(--container-padding);
   background-image: url(/assets/img/catalog-info-bg.png);
   background-size: cover;
   background-position: center left -22px;
@@ -1075,6 +1080,26 @@ body {
   color: rgba(255, 255, 255, 0.85);
 }
 
+.footer__inner--mobile {
+  display: none;
+  flex-direction: column;
+  gap: 40px;
+  padding: 60px 0;
+}
+
+.footer__mobile-cols {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.footer__mobile-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 /* ─── Burger ─────────────────────────────────────────────── */
 
 .burger {
@@ -1148,6 +1173,7 @@ body {
 }
 
 .offcanvas__nav-list {
+  align-items: center;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1159,7 +1185,7 @@ body {
 .offcanvas__nav-list li a {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--color-white);
   text-decoration: none;
   transition: opacity 0.2s;
@@ -1224,3 +1250,105 @@ body {
   position: relative;
   z-index: 1;
 }
+
+/* ─── Popup ──────────────────────────────────────────────── */
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.popup-overlay--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup {
+  position: relative;
+  align-items: center;
+  width: 100%;
+  max-width: 1037px;
+  background-image: url('../assets/img/popup-bg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 146px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  transform: translateY(24px);
+  transition: transform 0.3s ease;
+}
+
+.popup-overlay--visible .popup {
+  transform: translateY(0);
+}
+
+.popup__close {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 0;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.popup__close:hover {
+  opacity: 1;
+}
+
+.popup__title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 55px;
+  line-height: 105%;
+  color: #1a1105;
+  text-align: center;
+}
+
+.popup__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.popup__input {
+  width: 100%;
+  padding: 20px 30px;
+  border-radius: 100px;
+  border: 1px solid rgba(82, 46, 23, 0.25);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: #1a1105;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.popup__input::placeholder {
+  color: rgba(82, 46, 23, 0.35);
+}
+
+.popup__input:focus {
+  border-color: rgba(82, 46, 23, 0.4);
+}
+
+.popup__submit {
+  margin-top: 10px;
+}
+

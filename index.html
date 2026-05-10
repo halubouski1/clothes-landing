@@ -95,13 +95,6 @@
               <p class="hero__desc">A couture world where European tailoring meets the flowing mystery of the abaya. Bold silhouettes, feminine movement, and modern elegance designed for the woman who wants to feel powerful, graceful, and unforgettable.</p>
             </div>
           </div>
-
-        <div class="hero__indicators">
-          <span class="is-active">I</span>
-          <span>II</span>
-          <span>III</span>
-          <span>IV</span>
-        </div>
         </div>
         <!-- Divider -->
         <div class="hero__top-divider">
@@ -161,7 +154,7 @@
       <div class="about__img">
         <img src="assets/img/about-half-left.jpg" alt="Couture look">
       </div>
-      <p class="about__text">For us, the abaya is not only tradition. It is movement, grace, dignity, and mystery. Reimagined with couture sensitivity, it becomes a statement of beauty for every woman — regardless of origin, culture, or faith.</p>
+      <p class="about__text about__text--bottom">For us, the abaya is not only tradition. It is movement, grace, dignity, and mystery. Reimagined with couture sensitivity, it becomes a statement of beauty for every woman — regardless of origin, culture, or faith.</p>
     </div>
 
     <div class="about__right">
@@ -682,6 +675,70 @@
         </nav>
 
       </div>
+
+      <!-- Mobile footer (≤570px) -->
+      <div class="footer__inner--mobile">
+
+        <a href="#" class="footer__logo" aria-label="Home">
+          <img src="assets/img/logo.png" alt="">
+        </a>
+
+        <div class="footer__mobile-cols">
+
+          <!-- Left: Shop + Social media -->
+          <div class="footer__mobile-col">
+            <div class="footer__col">
+              <h3 class="footer__col-title">Shop</h3>
+              <ul class="footer__col-links">
+                <li><a href="#">Jewelry</a></li>
+                <li><a href="#">Engagement</a></li>
+                <li><a href="#">Gemstones</a></li>
+                <li><a href="#">Design Your Own</a></li>
+                <li><a href="#">Jewelry</a></li>
+                <li><a href="#">Engagement</a></li>
+                <li><a href="#">Gemstones</a></li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <h3 class="footer__col-title">Social media</h3>
+              <ul class="footer__col-links">
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Facebook</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right: Client care + Contact us + Support -->
+          <div class="footer__mobile-col">
+            <div class="footer__col">
+              <h3 class="footer__col-title">Client care</h3>
+              <ul class="footer__col-links">
+                <li><a href="#">Product Care &amp; Repair</a></li>
+                <li><a href="#">Shipping &amp; Returns</a></li>
+                <li><a href="#">Frequently Asked Questions</a></li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <h3 class="footer__col-title">Contact us</h3>
+              <ul class="footer__col-links">
+                <li><a href="tel:+97211180549439">+972 (111) 805 4943</a></li>
+                <li><a href="tel:+97211180549439">+972 (111) 805 4943</a></li>
+                <li><a href="mailto:info@ivankovskiy.com">info@ivankovskiy.com</a></li>
+              </ul>
+            </div>
+            <div class="footer__col">
+              <h3 class="footer__col-title">Support</h3>
+              <ul class="footer__col-links">
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </footer>
 
@@ -786,6 +843,27 @@
     })();
   </script>
 
+  <!-- Popup -->
+  <div class="popup-overlay">
+    <div class="popup">
+      <button class="popup__close" aria-label="Close">
+        <img src="assets/img/popup-close.svg" alt="">
+      </button>
+      <h2 class="popup__title">Fill out a consultation request</h2>
+      <form class="popup__form" onsubmit="return false;">
+        <input type="text" class="popup__input" placeholder="Name">
+        <input type="tel" class="popup__input" placeholder="+1 (000)-000-00-00">
+        <input type="email" class="popup__input" placeholder="example@mail.com">
+        <button type="submit" class="btn btn--primary popup__submit">
+          Book a Consultation
+          <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 5H13M9 1L13 5L9 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -794,6 +872,41 @@
       once: true,
       easing: 'ease-out',
     });
+  </script>
+
+  <script>
+    (function () {
+      var overlay = document.querySelector('.popup-overlay');
+      var closeBtn = document.querySelector('.popup__close');
+
+      function openPopup() {
+        overlay.classList.add('popup-overlay--visible');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closePopup() {
+        overlay.classList.remove('popup-overlay--visible');
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('.btn--primary');
+        if (btn && !btn.classList.contains('popup__submit')) {
+          e.preventDefault();
+          openPopup();
+        }
+      });
+
+      closeBtn.addEventListener('click', closePopup);
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closePopup();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closePopup();
+      });
+    })();
   </script>
 
 </body>
