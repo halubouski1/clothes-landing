@@ -623,4 +623,8 @@
         top: 15px;
         right: 15px;
     }
+/* 
+    .collection__card-img {
+    aspect-ratio: inherit;
+    } */
 }
