@@ -507,6 +507,19 @@ body {
   min-width: 0;
 }
 
+  .collection__card--first p{
+    max-width: 277px;
+  }
+
+  .collection__card--second p{
+    max-width: 330px;
+  }
+
+  .collection__card--third p{
+    max-width: 290px;
+  }
+
+
 .collection__card-img {
   position: relative;
   aspect-ratio: 3 / 4;
@@ -595,6 +608,7 @@ body {
 /* ─── Looks ──────────────────────────────────────────────── */
 
 .looks {
+  align-items: center;
   position: relative;
   min-height: 1772px;
   display: flex;
@@ -626,6 +640,7 @@ body {
 }
 
 .looks__title {
+  max-width: 792px;
   font-family: var(--font-serif);
   z-index: 1;
   font-weight: 400;

@@ -118,6 +118,7 @@
 
     .looks__title {
         padding-top: 100px;
+        max-width: 500px;
     }
 
     .looks__inner {
@@ -474,6 +475,11 @@
 
     .about__text {
         margin-bottom: 50px;
+        max-width: 302px;
+    }
+
+    .about__text--bottom {
+        max-width: 310px;
     }
 
     .about__img {
@@ -490,6 +496,14 @@
 
     .collection__header {
         margin-bottom: 30px;
+    }
+
+    .collection__card--second p {
+    max-width: 326px;
+    }
+
+    .collection__card--third p {
+    max-width: 293px;
     }
 
     .collection__card-tag {
@@ -511,7 +525,8 @@
     }
 
     .looks__title {
-        max-width: 251px;
+        padding-top: 40px;
+        max-width: 275px;
     }
 
     .looks {
