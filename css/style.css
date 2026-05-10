@@ -664,16 +664,32 @@ body {
   background-image: url('/assets/img/looks-card-1.png');
 }
 
+.looks__card--first p{
+    max-width: 247px;
+}
+
 .looks__card--second {
   background-image: url('/assets/img/looks-card-2.png');
+}
+
+.looks__card--second p{
+    max-width: 266px;
 }
 
 .looks__card--third {
   background-image: url('/assets/img/looks-card-3.png');
 }
 
+.looks__card--third p{
+    max-width: 272px;
+}
+
 .looks__card--fourth {
   background-image: url('/assets/img/looks-card-4.png');
+}
+
+.looks__card--fourth p{
+  max-width: 200px;
 }
 
 .looks__cards-left {
