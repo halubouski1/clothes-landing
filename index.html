@@ -784,65 +784,6 @@
     </a>
   </aside>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    new Swiper('.catalog-swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-      loop: true,
-      navigation: {
-        prevEl: '.catalog-prev',
-        nextEl: '.catalog-next',
-      },
-      pagination: {
-        el: '.catalog-pagination',
-        clickable: true,
-      },
-    });
-
-    new Swiper('.catalog-swiper-mobile', {
-      slidesPerView: 'auto',
-      spaceBetween: 12,
-      loop: true,
-      navigation: {
-        prevEl: '.catalog-prev-mobile',
-        nextEl: '.catalog-next-mobile',
-      },
-      pagination: {
-        el: '.catalog-pagination-mobile',
-        clickable: true,
-      },
-    });
-  </script>
-
-  <script>
-    (function () {
-      var burger = document.querySelector('.burger');
-      var offcanvas = document.querySelector('.offcanvas');
-      var overlay = document.querySelector('.offcanvas-overlay');
-      var closeBtn = document.querySelector('.offcanvas__close');
-
-      function openMenu() {
-        offcanvas.classList.add('offcanvas--open');
-        overlay.classList.add('offcanvas-overlay--visible');
-        burger.setAttribute('aria-expanded', 'true');
-        offcanvas.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeMenu() {
-        offcanvas.classList.remove('offcanvas--open');
-        overlay.classList.remove('offcanvas-overlay--visible');
-        burger.setAttribute('aria-expanded', 'false');
-        offcanvas.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-
-      burger.addEventListener('click', openMenu);
-      overlay.addEventListener('click', closeMenu);
-      closeBtn.addEventListener('click', closeMenu);
-    })();
-  </script>
 
   <!-- Popup -->
   <div class="popup-overlay">
@@ -868,50 +809,6 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 700,
-      offset: 80,
-      once: true,
-      easing: 'ease-out',
-    });
-  </script>
-
-  <script>
-    (function () {
-      var overlay = document.querySelector('.popup-overlay');
-      var closeBtn = document.querySelector('.popup__close');
-
-      function openPopup() {
-        overlay.classList.add('popup-overlay--visible');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closePopup() {
-        overlay.classList.remove('popup-overlay--visible');
-        document.body.style.overflow = '';
-      }
-
-      document.addEventListener('click', function (e) {
-        var btn = e.target.closest('.btn--primary');
-        if (btn && !btn.classList.contains('popup__submit')) {
-          e.preventDefault();
-          openPopup();
-        }
-      });
-
-      closeBtn.addEventListener('click', closePopup);
-
-      overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) closePopup();
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closePopup();
-      });
-    })();
-  </script>
-
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
