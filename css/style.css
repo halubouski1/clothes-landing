@@ -1082,6 +1082,19 @@ body {
   gap: 20px;
 }
 
+.footer__col--ig img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.footer__col--ig a:hover img {
+  opacity: 1;
+}
+
 .footer__col-title {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -1120,6 +1133,25 @@ body {
   padding: 60px 0;
 }
 
+.footer__mobile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__mobile-ig img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.footer__mobile-ig:hover img {
+  opacity: 1;
+}
+
 .footer__mobile-cols {
   display: flex;
   gap: 20px;
@@ -1131,6 +1163,17 @@ body {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+.footer__licence {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: #b19a89;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 0;
 }
 
 /* ─── Burger ─────────────────────────────────────────────── */

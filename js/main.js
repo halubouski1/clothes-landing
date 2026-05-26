@@ -68,6 +68,9 @@ new Swiper('.catalog-swiper-mobile', {
   burger.addEventListener('click', openMenu);
   offcanvasOverlay.addEventListener('click', closeMenu);
   offcanvasClose.addEventListener('click', closeMenu);
+  offcanvas.querySelectorAll('a[href]').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
 })();
 
 // ── AOS ───────────────────────────────────────────────────────────────────────
