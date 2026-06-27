@@ -149,9 +149,10 @@ body {
 /* ─── Header ─────────────────────────────────────────────── */
 
 .header {
-  position: relative;
+  position: absolute;
   z-index: 20;
   padding-top: 15px;
+  width: 100%;
 }
 
 .header__inner {
