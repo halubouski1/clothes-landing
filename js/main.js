@@ -1,6 +1,6 @@
-import Lenis from 'https://esm.sh/lenis@1.1.14';
-import Swiper from 'https://esm.sh/swiper@11/bundle';
-import AOS from 'https://esm.sh/aos@2.3.4';
+import Lenis from './vendor/lenis.js';
+import Swiper from './vendor/swiper.js';
+import AOS from './vendor/aos.js';
 
 // ── Lenis smooth scroll ───────────────────────────────────────────────────────
 window.lenis = new Lenis({
